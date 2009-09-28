@@ -1,0 +1,125 @@
+ply (3.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/control:
+    + Depend on python-pkg-resources instead of python-setuptools as the
+      latter is not necessary on runtime. Closes: #546430.
+    + Update Standards-Version to 3.8.3. No changes needed.
+    + Bump python-support version to 0.90.
+  * Remove useless debian/pycompat.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Mon, 28 Sep 2009 11:18:22 +0100
+
+ply (3.2-1) unstable; urgency=low
+
+  [ Arnaud Fontaine ]
+  * New upstream release.
+    + debian/copyright:
+      - Update license as it is now distributed as a BSD license.
+    + debian/python-ply-doc.docs:
+      - Add all html files.
+  * debian/control:
+    + Add ${misc:Depends} to Depends in case the result of calls debhelper
+      tools adds extra dependencies.
+    + Update Standards-Version to 3.8.1.
+      - Wrap Uploaders field.
+
+  [ Sandro Tosi ]
+  * debian/control
+    - Switch Vcs-Browser field to viewsvn.
+	
+ -- Arnaud Fontaine <arnau@debian.org>  Fri, 22 May 2009 00:34:36 +0100
+
+ply (2.5-2) unstable; urgency=low
+
+  * debian/control:
+    + Move python-setuptools to Build-Depends-Indep.
+    + Add python-setuptools to Suggests.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Thu, 29 May 2008 22:12:19 +0200
+
+ply (2.5-1) unstable; urgency=low
+
+  * New upstream release. Closes: #483368.
+  * debian/control:
+    + Add Build-Depends against python-setuptools (ply now supports eggs).
+
+ -- Arnaud Fontaine <arnau@debian.org>  Thu, 29 May 2008 18:37:16 +0200
+
+ply (2.3-2) unstable; urgency=low
+
+  [ Arnaud Fontaine ]
+  * New email address.
+
+  [ Piotr Ożarowski ]
+  * debian/control:
+    + Vcs-Browser and Homepage fields added (dpkg support them now).
+    + XS-Vcs-Svn field renamed to Vcs-Svn (dpkg supports it now).
+
+  [ Sandro Tosi ]
+  * debian/control
+    - uniforming Vcs-Browser field.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Sat, 23 Feb 2008 13:02:56 +0000
+
+ply (2.3-1) unstable; urgency=low
+
+  [ Arnaud Fontaine ]
+  * New upstream release.
+
+  [ Piotr Ożarowski ]
+  * Added XS-Vcs-Svn field
+
+ -- Arnaud Fontaine <arnaud@andesi.org>  Mon, 16 Apr 2007 18:53:24 +0200
+
+ply (2.2-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Arnaud Fontaine <arnaud@andesi.org>  Sat,  4 Nov 2006 00:45:51 +0100
+
+ply (1.8-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Arnaud Fontaine <arnaud@andesi.org>  Mon, 21 Aug 2006 15:28:48 +0200
+
+ply (1.7-1) unstable; urgency=low
+
+  * New upstream version.
+  * debian/watch:
+    - Add this file. Thanks to Piotr Ożarowski.
+  * debian/control.in:
+    - Update Standards to 3.7.2. No changes needed.
+  * New Python policy changes. Closes: #373480.
+    + debian/compat:
+      - Update debhelper compatibility to 5.
+    + debian/rules:
+      - Add DEB_PYTHON_SYSTEM=pysupport.
+    + debian/control.in
+      - Clean Build-Depends and Depends, cdbs handles that 
+      	automatically now.
+      - XB-Python-Version and Provides for binary package.
+    + debian/postinst && debian/prerm:
+      - Remove "hand made" python-support stuff, cdbs does this.
+
+ -- Arnaud Fontaine <arnaud@andesi.org>  Thu, 16 Jun 2006 16:08:24 +0200
+
+ply (1.6-2) unstable; urgency=low
+  
+  [ Arnaud Fontaine ]
+  * Fix typo into debian/control*.
+  * Move Build-Depends-Indep to Build-Depends according
+    to the debian policy.
+
+  [ Gustavo Franco ]
+  * debian/control: 
+    - Standards-Version bumped up to 3.7.0
+  
+ -- Arnaud Fontaine <arnaud@andesi.org>  Sat, 22 Apr 2006 19:26:57 +0200
+
+ply (1.6-1) unstable; urgency=low
+
+  * Initial release. Closes: #215804.
+
+ -- Arnaud Fontaine <arnaud@andesi.org>  Tue, 11 Apr 2006 22:21:34 +0200
