@@ -1,13 +1,24 @@
 #!/usr/bin/make -f
 # -*- mode: makefile; coding: utf-8 -*-
 
-DEB_PYTHON_SYSTEM=pysupport
-
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/python-distutils.mk
 
 # Don't compress .py files
 DEB_COMPRESS_EXCLUDE := .py
 
-DEB_DESTDIR := debian/python-ply
-DEB_PYTHON_INSTALL_ARGS_ALL += --single-version-externally-managed
+DEB_PYTHON_INSTALL_ARGS_ALL += --single-version-externally-managed \
+	--install-layout=deb
+
+binary-install/python-ply::
+	pod2man debian/dh_python-ply > dh_python-ply.1
+	dh_installman -p python-ply dh_python-ply.1
+	rm dh_python-ply.1
+
+binary-post-install/python-ply::
+	echo "python-ply:Provides=$$(PYTHONPATH=. python debian/virtual-packages.py $(cdbs_curpkg))" >> \
+		debian/python-ply.substvars
+
+binary-post-install/python3-ply::
+	echo "python3-ply:Provides=$$(PYTHONPATH=. python debian/virtual-packages.py $(cdbs_curpkg))" >> \
+		debian/python3-ply.substvars
