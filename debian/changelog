@@ -1,3 +1,27 @@
+ply (3.4-5) unstable; urgency=medium
+
+  * d/rules: add manpage for dh_python3-ply.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Thu, 16 Oct 2014 15:23:25 +0900
+
+ply (3.4-4) unstable; urgency=medium
+
+  [ Jakub Wilk ]
+  * Use canonical URIs for Vcs-* fields.
+
+  [ Arnaud Fontaine ]
+  * Remove Gustavo Franco from Uploaders as he is retiring. Closes: #729398.
+  * Enable tests during package build. Thanks to James Page. Closes: #734366.
+    + d/rules: Execute lex and yacc tests for all python versions.
+    + d/p/*.patch: Cherry picked fixes from upstream VCS to resolve
+      compatibility issues with Python >= 3.3.
+  * d/control: bump Standards-Version to 3.9.6. No changes needed.
+  * Add dh_python3-ply to generate proper package Depends for Python3.
+    Closes: #714099.
+  * d/patches/*: remove meaningless (at least with quilt) numbering prefix.
+
+ -- Arnaud Fontaine <arnau@debian.org>  Thu, 16 Oct 2014 14:33:15 +0900
+
 ply (3.4-3) unstable; urgency=low
 
   * debian/control: bump Standards-Version to 3.9.3. No changes needed.
